@@ -1,0 +1,38 @@
+{
+  "name": "stylelint-require-units",
+  "description": "",
+  "version": "1.0.0",
+  "author": "Matterialize",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "csslint",
+    "lint",
+    "linter",
+    "stylelint",
+    "stylelint-plugin"
+  ],
+  "main": "stylelint-require-units.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=6.4.0"
+  },
+  "dependencies": {
+    "postcss-value-parser": "^4.0.3"
+  },
+  "devDependencies": {
+    "jest": "^25.4.0",
+    "lodash": "^4.17.15",
+    "stylelint": "^13.3.3"
+  },
+  "peerDependencies": {
+    "stylelint": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0"
+  },
+  "jest": {
+    "setupFiles": [
+      "./jest-setup.js"
+    ]
+  }
+}
