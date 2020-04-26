@@ -3,6 +3,10 @@
   "description": "",
   "version": "1.0.0",
   "author": "Matterialize",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matterialize/stylelint-require-units.git"
+  },
   "license": "MIT",
   "keywords": [
     "css",
@@ -34,5 +38,5 @@
     "setupFiles": [
       "./jest-setup.js"
     ]
-  }
+  },
 }
