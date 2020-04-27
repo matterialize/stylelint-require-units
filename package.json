@@ -1,7 +1,7 @@
 {
   "name": "stylelint-require-units",
   "description": "",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Matterialize",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "stylelint",
     "stylelint-plugin"
   ],
-  "main": "stylelint-require-units.js",
+  "main": "src/stylelint-require-units.js",
   "scripts": {
     "test": "jest"
   },

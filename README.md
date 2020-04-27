@@ -104,7 +104,9 @@ npm install stylelint-require-units -save-dev
 ```json
 {
   "plugins": ["stylelint-require-units"],
-  "matterialize/stylelint-require-units": true
+  "rules": {
+    "matterialize/stylelint-require-units": true
+  }
 }
 ```
 
@@ -116,9 +118,11 @@ By default the type of units are not checked by this plugin, just that the units
 ```json
 {
   "plugins": ["stylelint-require-units"],
-  "matterialize/stylelint-require-units": [true, {
-    "checkUnknownUnits": true
-  }]
+  "rules": {
+    "matterialize/stylelint-require-units": [true, {
+      "checkUnknownUnits": true
+    }]
+  }
 }
 ```
 
@@ -127,9 +131,11 @@ By default 0 is not required to have units. If you have a stylist preference to 
 ```json
 {
   "plugins": ["stylelint-require-units"],
-  "matterialize/stylelint-require-units": [true, {
-    "forceZeroToRequireUnits": true
-  }]
+  "rules": {
+    "matterialize/stylelint-require-units": [true, {
+      "forceZeroToRequireUnits": true
+    }]
+  }
 }
 ```
 
@@ -141,9 +147,11 @@ If you only want to check certain properties then you can use `whitelistedProper
 ```json
 {
   "plugins": ["stylelint-require-units"],
-  "matterialize/stylelint-require-units": [true, {
-    "whitelistedProperties": ["width", "border"],
-  }]
+  "rules": {
+    "matterialize/stylelint-require-units": [true, {
+      "whitelistedProperties": ["width", "border"],
+    }]
+  }
 }
 ```
 
@@ -152,9 +160,11 @@ If you only want to check all default properties, but want to remove one or more
 ```json
 {
   "plugins": ["stylelint-require-units"],
-  "matterialize/stylelint-require-units": [true, {
-    "blacklistedProperties": ["width", "border"],
-  }]
+  "rules": {
+    "matterialize/stylelint-require-units": [true, {
+      "blacklistedProperties": ["width", "border"],
+    }]
+  }
 }
 ```
 
