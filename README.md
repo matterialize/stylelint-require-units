@@ -1,4 +1,4 @@
-# stylelint-require-unit
+# stylelint-require-units
 
 A customizable [stylelint](https://github.com/stylelint/stylelint) rule to require units for certain css properties.
 
