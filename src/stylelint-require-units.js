@@ -96,7 +96,7 @@ const checkedUnits = [
 // Group 1 & 2 = number
 // Group 1 = $dummyValue
 // Group 4 = units
-const unitsRegex = /(([0-9]+([,.][0-9]+)?)|\$dummyValue|\$\{[^}]+\})(.+)?/g;
+const unitsRegex = /(?<!#)(([0-9]+([,.][0-9]+)?)|\$dummyValue|\$\{[^}]+\})(.+)?/g;
 
 const isStringArray = value => isArray(value) && every(value, isString);
 
