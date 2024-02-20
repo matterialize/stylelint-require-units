@@ -108,11 +108,18 @@ module.exports = createPlugin(ruleName, (enabled, options) => {
     const {
       checkUnknownUnits,
       forceZeroToRequireUnits,
-      whitelistedProperties,
-      blacklistedProperties,
       checkedFunctions,
       additionalProperties,
+      whitelistedProperties,
+      blacklistedProperties,
     } = options;
+
+    const allowedProperties = options.allowedProperties || whitelistedProperties;
+    const disallowedProperties = options.disallowedProperties || blacklistedProperties;
+
+    if (whitelistedProperties || blacklistedProperties) {
+      console.warn('`whitelistedProperties` and `disallowedProperties` have been replaced with `allowedProperties` and `disallowedProperties`.')
+    }
 
     let validOptions = utils.validateOptions(
       postcssResult,
@@ -153,9 +160,9 @@ module.exports = createPlugin(ruleName, (enabled, options) => {
       postcssResult,
       '"' +
         ruleName +
-        '": Second option\'s "whitelistedProperties" should be an array of string properties that are the only ones checked',
+        '": Second option\'s "allowedProperties" should be an array of string properties that are the only ones checked',
       {
-        actual: whitelistedProperties,
+        actual: allowedProperties,
         possible: isStringArray,
         optional: true,
       }
@@ -165,9 +172,9 @@ module.exports = createPlugin(ruleName, (enabled, options) => {
       postcssResult,
       '"' +
         ruleName +
-        '": Second option\'s "blacklistedProperties" should be an array of string properties that are not checked',
+        '": Second option\'s "disallowedProperties" should be an array of string properties that are not checked',
       {
-        actual: blacklistedProperties,
+        actual: disallowedProperties,
         possible: isStringArray, 
         optional: true,
       }
@@ -200,22 +207,22 @@ module.exports = createPlugin(ruleName, (enabled, options) => {
       return;
     }
 
-    if (whitelistedProperties && blacklistedProperties) {
+    if (allowedProperties && disallowedProperties) {
       throw new Error(
-        'Only either whitelistedProperties or blackedlistedProperties can be used for rule "' +
+        'Only either allowlistProperties or blackedlistedProperties can be used for rule "' +
           ruleName +
           '"'
       );
     }
 
-    if (whitelistedProperties) {
-      checkedProperties = whitelistedProperties;
+    if (allowedProperties) {
+      checkedProperties = allowedProperties;
     }
 
-    if (blacklistedProperties) {
+    if (disallowedProperties) {
       checkedProperties = difference(
         checkedProperties,
-        blacklistedProperties
+        disallowedProperties
       );
     }
 

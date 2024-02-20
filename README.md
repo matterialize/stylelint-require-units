@@ -139,36 +139,36 @@ By default 0 is not required to have units. If you have a stylist preference to 
 }
 ```
 
-#### Option: Whitelisted properties
-If you only want to check certain properties then you can use `whitelistedProperties` and only those properties listed in the array will be checked.
+#### Option: allowlist properties
+If you only want to check certain properties then you can use `allowedProperties` and only those properties listed in the array will be checked.
 
-**NOTE:** This can not be used with `blackListedProperties`. It is either or.
+**NOTE:** This can not be used with `disallowedProperties`. It is either or.
 
 ```json
 {
   "plugins": ["stylelint-require-units"],
   "rules": {
     "matterialize/stylelint-require-units": [true, {
-      "whitelistedProperties": ["width", "border"],
+      "allowedProperties": ["width", "border"]
     }]
   }
 }
 ```
 
-#### Option: Blacklisted properties
-If you only want to check all default properties, but want to remove one or more properties from the default list, then you can use `blacklistedProperties` and only those properties listed in the default array will not be checked.
+#### Option: disallow properties
+If you only want to check all default properties, but want to remove one or more properties from the default list, then you can use `disallowedProperties` and only those properties listed in the default array will not be checked.
 ```json
 {
   "plugins": ["stylelint-require-units"],
   "rules": {
     "matterialize/stylelint-require-units": [true, {
-      "blacklistedProperties": ["width", "border"],
+      "disallowedProperties": ["width", "border"]
     }]
   }
 }
 ```
 
-**NOTE:** This can not be used with `whiteListedProperties`. It is either or.
+**NOTE:** This can not be used with `allowedProperties`. It is either or.
 
 #### Option: Checked functions
 If you want to check specific functions and you pass the function name(s) in the `checkedFunctions` array.
@@ -176,7 +176,7 @@ If you want to check specific functions and you pass the function name(s) in the
 {
   "plugins": ["stylelint-require-units"],
   "matterialize/stylelint-require-units": [true, {
-    "checkedFunctions": ["myCustomFunction1", "myCustomFunction2"],
+    "checkedFunctions": ["myCustomFunction1", "myCustomFunction2"]
   }]
 }
 ```
@@ -184,13 +184,13 @@ If you want to check specific functions and you pass the function name(s) in the
 #### Option: Additional Properties
 New properties are added periodically and in order to future proof or provide extended properties that are not here, add these properties to `additionalProperties`.
 
-**NOTE:** These properties are additional to `whitelistedProperties` or `blacklistedProperties`.
+**NOTE:** These properties are additional to `allowedProperties` or `disallowedProperties`.
 
 ```json
 {
   "plugins": ["stylelint-require-units"],
   "matterialize/stylelint-require-units": [true, {
-    "additionalProperties": ["newProperty1", "newProperty2"],
+    "additionalProperties": ["newProperty1", "newProperty2"]
   }]
 }
 ```
