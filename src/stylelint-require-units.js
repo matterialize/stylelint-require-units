@@ -44,7 +44,6 @@ let checkedProperties = [
   "height",
   "left",
   "letter-spacing",
-  "line-height",
   "margin",
   "margin-bottom",
   "margin-left",
